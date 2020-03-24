@@ -6,6 +6,7 @@ sap.ui.require([
 	"use strict";
 
 	// Attach an anonymous function to the SAPUI5 'init' event
+	// Anexa uma função anônima ao evento 'init' do SAPUI5
 	sap.ui.getCore().attachInit(function () {
 
 		var oProductModel = new JSONModel();
@@ -28,6 +29,7 @@ sap.ui.require([
 		});
 
 		// Assign the model object to the SAPUI5 core
+		// Atribui o objeto de modelo ao núcleo SAPUI5
 		sap.ui.getCore().setModel(oModel);
 
 		var oResourceBundle = new ResourceModel({
@@ -37,14 +39,17 @@ sap.ui.require([
 		sap.ui.getCore().setModel(oResourceBundle, "i18n");
 
 		// Display the XML view called "App"
+		// Exibe a visualização XML chamada no "App"
 		var oView = new XMLView({
 			viewName: "sap.ui.demo.db.view.App"
 		}).placeAt("content");
 
 		// Register the view with the message manager
+		// Registra a visualização no gerenciador de mensagens
 		sap.ui.getCore().getMessageManager().registerObject(oView, true);
 
 		// Insert the view into the DOM
+		// Insere a visualização no DOM
 		oView.placeAt("content");
 	});
 });
